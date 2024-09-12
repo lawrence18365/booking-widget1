@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Booking Widget</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/airbnb.css">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="booking-widget">
+        <div id="auth-status"></div>
+        <button id="auth-link" class="btn btn-auth">Connect Calendar</button>
+        <div id="booking-content">
+            <div id="service-selection">
+                <select id="service-dropdown">
+                    <option value="">Select a service</option>
+                </select>
+                <p id="service-description"></p>
+                <p id="service-duration"></p>
+                <p id="service-price"></p>
+            </div>
+            <div id="calendar-container">
+                <div id="inline-calendar"></div>
+                <div id="time-slots"></div>
+            </div>
+            <form id="booking-form">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <input type="tel" id="phone" placeholder="Your Phone" required>
+                <textarea id="notes" placeholder="Any special requests or notes?"></textarea>
+                <div id="booking-summary"></div>
+                <button type="submit" class="btn btn-book">Book Appointment</button>
+            </form>
+        </div>
+        <div id="upcoming-appointments"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
